@@ -154,3 +154,9 @@ void outputArray(Mang m) {
 	}
 }
 void timMax(Mang m)
+{
+	for (int i = 0; i < m.n; i++)
+	{
+
+	}
+}
