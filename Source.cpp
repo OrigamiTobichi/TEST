@@ -153,3 +153,4 @@ void outputArray(Mang m) {
 		cout << m.a[i] << " ";
 	}
 }
+void timMax(Mang m)
