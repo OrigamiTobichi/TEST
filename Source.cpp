@@ -160,3 +160,4 @@ void timMax(Mang m)
 		int i = 0; i++;
 	}
 }
+ngusadhdahdadvha vaddstdftgvdywqdqwvhj dw
