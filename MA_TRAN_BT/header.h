@@ -21,4 +21,9 @@ int timDongCoNhieuSoDuongNhat(MaTran mt);
 void inTatCaCacPTTamGiacDuoiDuongCheoPhu(MaTran mt);
 int tinhTongBoiCua7(MaTran mt);
 int tinhTongTrenTungCot(MaTran mt);
-
+int tinhTongTrenTungDong(MaTran mt);
+int timPTLNTren1Cot(MaTran mt,int cot);
+int tinhTongCacPTLNTrenTungCot(MaTran mt);
+bool timSCPLNTrongMaTran(MaTran mt, int & SCPMax);
+int giaTriSCPMaxTrongMaTran(MaTran mt,int & SCPMax);
+bool kiemTraSCP(int n);

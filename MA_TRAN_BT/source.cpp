@@ -149,8 +149,8 @@ bool kiemTraMaTranDonVi(MaTran mt)
 }
 int timDongCoNhieuSoDuongNhat(MaTran mt)
 {
-    int vt=0;
-    
+    int vitri=0;
+    int demmax=0;   
     for(int i=0;i<mt.n;i++)
     {
         int dem=0;
@@ -158,9 +158,14 @@ int timDongCoNhieuSoDuongNhat(MaTran mt)
         {
             if(mt.a[i][j]>0)
             dem++;
+        }
+        if(demmax<dem)
+        {
+            demmax=dem;
+            vitri=i;
         }   
     }
-    return vt;
+    return vitri;
 }
 void inTatCaCacPTTamGiacDuoiDuongCheoPhu(MaTran mt)
 {
@@ -193,11 +198,81 @@ int tinhTongBoiCua7(MaTran mt)
 }
 int tinhTongTrenTungCot(MaTran mt)
 {
+    for(int j=0;j<mt.n;j++)//cột đứng dòng chạy
+    {
+        int tong =0;
+        for(int i=0;i<mt.n;i++)//dòng chạy từ i = 0. 
+        {
+            tong += mt.a[i][j];
+        }
+        cout <<"TONG TREN COT THU "<<j<<" LA :"<<tong<<endl; 
+    }
+}
+int tinhTongTrenTungDong(MaTran mt)
+{
+    for(int  i=0;i<mt.n;i++)//dòng đứng cột chạy .
+    {
+        int tong =0;
+        for(int j=0;j<mt.n;j++)// cột chạy từ j = 0.
+        {
+            tong+=mt.a[i][j];
+        }
+        cout <<"TONG TREN DONG THU "<<i<<" LA :"<<tong<<endl; 
+    }
+}
+int timPTLNTren1Cot(MaTran mt,int cot)
+{
+    int max = mt.a[0][cot];   
+    for(int i=0;i<mt.n;i++)
+    {
+        if(mt.a[i][cot]>max)
+        {  
+            max=mt.a[i][cot];
+        }
+    }
+    return max;
+}
+int tinhTongCacPTLNTrenTungCot(MaTran mt)
+{
+    int tong=0;
+    for(int i=0;i<mt.n;i++)
+    {
+        tong += timPTLNTren1Cot(mt,i);
+    }
+    return tong;
+}
+bool kiemTraSCP(int n)
+{
+    int i=1;
+    while(i<n)
+    {
+        if(i*i==n)
+        {
+            return true;
+        }
+        i++;
+    }
+    return false;
+}
+bool timSCPLNTrongMaTran(MaTran mt, int & SCPMax)
+{
+    bool flag=false;
     for(int i=0;i<mt.n;i++)
     {
         for(int j=0;j<mt.n;j++)
         {
-            
+            if(kiemTraSCP(mt.a[i][j])==true)
+            {
+            if(!flag)
+                {
+                    SCPMax=mt.a[i][j];
+                    flag = true;
+                }
+            else if(SCPMax<mt.a[i][j])
+                SCPMax=mt.a[i][j];
+            }
         }
     }
+    cout<<"SCP LON NHAT TRONG MA TRAN LA :"<<SCPMax<<endl;
+    return flag;
 }

@@ -34,8 +34,16 @@ int main()
     // inTatCaCacPTTamGiacDuoiDuongCheoPhu(mt);
     // int kq8=tinhTongBoiCua7(mt);
     // cout<<"TONG LA BOI CUA 7 LA :"<<kq8<<endl;
-    int kq9=tinhTongTrenTungCot(mt);
-    cout<<"TONG TREN COT:"<<kq9<<endl;
+    // tinhTongTrenTungDong(mt);
+    // int cot;
+    // cout<<"NHAP COT :";
+    // cin>>cot;
+    // int kq10=timPTLNTren1Cot(mt,cot);
+    // cout<<"PTLN TREN COT THU "<<cot<<" LA:"<<kq10<<endl;
+    // int kq11=tinhTongCacPTLNTrenTungCot(mt);
+    // cout<<"TONG LA :"<<kq11<<endl;
+    int SCPMax;
+    timSCPLNTrongMaTran(mt,SCPMax);
     system("pause");
     return 0;
 }
