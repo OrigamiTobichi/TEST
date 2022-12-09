@@ -13,7 +13,6 @@ function Validator(options){
             errorMessage = rules[i](inputElement.value);
             if(errorMessage) break;
         }
-
         if(errorMessage){
             errorElement.innerText = errorMessage;
             inputElement.parentElement.classList.add('invalid');
@@ -89,3 +88,4 @@ Validator.confirm = function (selector, confirmValue){
         }
     }
 }
+asas
